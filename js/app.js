@@ -41,7 +41,7 @@ var pike= {
 
 pike.putTheNumbersInTheBroswer();
 
-var seatac= {
+var seaTac= {
   name: 'SecTac',
   minCustomers: 23,
   maxCustomers: 65,
@@ -67,21 +67,21 @@ var seatac= {
   },
 
   putTheNumbersInTheBroswer: function() {
-    var seataclist = document.getElementById('seatac');
+    var seaTacList = document.getElementById('seatac');
     this.peopleEveryHour();
     this.totalSold();
     for (var i = 0; i < timeHours.length; i++) {
       var liEL = document.createElement('li');
       liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i] + ' cookies';
-      seataclist.appendChild(liEL);
+      seaTacList.appendChild(liEL);
     }
     liEL = document.createElement('li');
     liEL.textContent = 'total sold: ' + this.addedTotalCookies;
-    seataclist.appendChild(liEL);
+    seaTacList.appendChild(liEL);
   }
 };
 
-seatac.putTheNumbersInTheBroswer();
+seaTac.putTheNumbersInTheBroswer();
 
 var center= {
   name: 'Center',
