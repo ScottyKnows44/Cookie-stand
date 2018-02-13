@@ -11,7 +11,6 @@ var pike= {
       var customerForOneHour =  Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)+ this.minCustomers);
       this.customersEachHour.push(customerForOneHour);
     }
-
   },
 
   totalCookiesSoldToday: [],
@@ -31,14 +30,13 @@ var pike= {
     this.totalSold();
     for (var i = 0; i < timeHours.length; i++) {
       var liEL = document.createElement('li');
-      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i];
+      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i] + ' cookies';
       pikelist.appendChild(liEL);
     }
     liEL = document.createElement('li');
     liEL.textContent = 'total sold: ' + this.addedTotalCookies;
     pikelist.appendChild(liEL);
   }
-
 };
 
 pike.putTheNumbersInTheBroswer();
@@ -74,14 +72,13 @@ var seatac= {
     this.totalSold();
     for (var i = 0; i < timeHours.length; i++) {
       var liEL = document.createElement('li');
-      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i];
+      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i] + ' cookies';
       seataclist.appendChild(liEL);
     }
     liEL = document.createElement('li');
     liEL.textContent = 'total sold: ' + this.addedTotalCookies;
     seataclist.appendChild(liEL);
   }
-
 };
 
 seatac.putTheNumbersInTheBroswer();
@@ -116,7 +113,7 @@ var center= {
     this.totalSold();
     for (var i = 0; i < timeHours.length; i++) {
       var liEL = document.createElement('li');
-      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i];
+      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i] + ' cookies';
       centerlist.appendChild(liEL);
     }
     liEL = document.createElement('li');
@@ -157,7 +154,7 @@ var hill= {
     this.totalSold();
     for (var i = 0; i < timeHours.length; i++) {
       var liEL = document.createElement('li');
-      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i];
+      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i] + ' cookies';
       hilllist.appendChild(liEL);
     }
     liEL = document.createElement('li');
@@ -179,7 +176,6 @@ var alki= {
       var customerForOneHour =  Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)+ this.minCustomers);
       this.customersEachHour.push(customerForOneHour);
     }
-
   },
 
   totalCookiesSoldToday: [],
@@ -199,7 +195,7 @@ var alki= {
     this.totalSold();
     for (var i = 0; i < timeHours.length; i++) {
       var liEL = document.createElement('li');
-      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i];
+      liEL.textContent = timeHours[i] + ': ' + this.totalCookiesSoldToday[i] + ' cookies';
       alkilist.appendChild(liEL);
     }
     liEL = document.createElement('li');
