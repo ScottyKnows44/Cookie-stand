@@ -11,6 +11,8 @@ function SalmonStore (id, name, minCustomers, maxCustomers, avgCookies) {
   this.addedTotalCookies = 0;
   this.customersEachHour = [];
   allBranches.push(this);
+  this.peopleEveryHour();
+  this.totalSold();
 }
 SalmonStore.prototype.peopleEveryHour = function() {
   for (var i = 0; i < timeHours.length; i++) {
@@ -30,8 +32,6 @@ SalmonStore.prototype.totalSold = function() {
 
 SalmonStore.prototype.putTheNumbersInTheBroswer = function() {
   var tableContent = document.getElementById('storeTable');
-  this.peopleEveryHour();
-  this.totalSold();
   var trEL = document.createElement('tr');
   tdEL = document.createElement('td');
   tdEL.textContent = this.name;
@@ -62,7 +62,6 @@ function headerRow () {
   trEL.appendChild(total);
   tableContent.appendChild(trEL);
 }
-headerRow();
 
 var allBranches = [];
 new SalmonStore('pike','1st and Pike', 23, 65, 6.3);
@@ -71,6 +70,7 @@ new SalmonStore('center','SeattleCenter', 11, 38, 3.7);
 new SalmonStore('hill', 'Capital Hill', 20, 38, 2.3);
 new SalmonStore('alki', 'Alki', 2, 16, 4.6);
 
+headerRow();
 for (var i = 0; i < allBranches.length; i++) {
   allBranches[i].putTheNumbersInTheBroswer();
-} 
+}
