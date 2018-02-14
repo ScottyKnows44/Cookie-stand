@@ -17,6 +17,7 @@ SalmonStore.prototype.peopleEveryHour = function() {
     var customerForOneHour =  Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)+ this.minCustomers);
     this.customersEachHour.push(customerForOneHour);
   }
+
 },
 
 SalmonStore.prototype.totalSold = function() {
@@ -39,6 +40,11 @@ SalmonStore.prototype.putTheNumbersInTheBroswer = function() {
     var tdEL = document.createElement('td');
     tdEL.textContent = this.totalCookiesSoldToday[i];
     trEL.appendChild(tdEL);
+
+};
+
+pike.putTheNumbersInTheBroswer();
+
   }
   tableContent.appendChild(trEL);
   tdEL = document.createElement('td');
