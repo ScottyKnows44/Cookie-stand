@@ -40,11 +40,6 @@ SalmonStore.prototype.putTheNumbersInTheBroswer = function() {
     var tdEL = document.createElement('td');
     tdEL.textContent = this.totalCookiesSoldToday[i];
     trEL.appendChild(tdEL);
-
-};
-
-pike.putTheNumbersInTheBroswer();
-
   }
   tableContent.appendChild(trEL);
   tdEL = document.createElement('td');
@@ -79,4 +74,3 @@ new SalmonStore('alki', 'Alki', 2, 16, 4.6);
 for (var i = 0; i < allBranches.length; i++) {
   allBranches[i].putTheNumbersInTheBroswer();
 } 
-
