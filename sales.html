@@ -8,6 +8,28 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
+
+    <form id="storeForm">
+      <fieldset>
+        <legend>Add a New Store!</legend>
+
+        <label for="name">Name of Location: </label>
+        <input name="name" type="text" size="15" />
+
+        <label for="minCustomers">Min Customers Per Hour: </label>
+        <input name="minCustomers" type="text" />
+
+        <label for="maxCustomers">Max Customers Per Hour: </label>
+        <input name="maxCustomers" type="text" />
+
+        <label for="avgCookies">Average Cookies Sold: </label>
+        <input name="avgCookies" type="text" step=".1" />
+
+        <button type="submit">Submit Changes!</button>
+
+      </fieldset>
+    </form>
+
     <table id= "storeTable">
     </table>
   
