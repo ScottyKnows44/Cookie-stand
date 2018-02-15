@@ -1,5 +1,6 @@
 body {
   font-family: 'Baloo', cursive;
+  background: gray;
 }
 
 fieldset {
@@ -43,4 +44,9 @@ ul {
 
 li {
   display: inline;
+}
+
+#storeTable {
+  border: 5px;
+  border-color: green;
 }
