@@ -1,6 +1,9 @@
+'use strict';
+
 var timeHours = ['6am','7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var storeForm = document.getElementById('storeForm');
 var allBranches = [];
+var tableContent = document.getElementById('storeTable');
 
 storeForm.addEventListener('submit', handleFormSubmit);
 
@@ -33,7 +36,6 @@ SalmonStore.prototype.peopleEveryHour = function() {
   }
 },
 SalmonStore.prototype.putTheNumbersInTheBroswer = function() {
-  var tableContent = document.getElementById('storeTable');
   var trEL = document.createElement('tr');
   tdEL = document.createElement('td');
   tdEL.textContent = this.name;
@@ -51,18 +53,40 @@ SalmonStore.prototype.putTheNumbersInTheBroswer = function() {
 
 function handleFormSubmit(event){
   event.preventDefault();
-  var avgCookies = event.target.avgCookies.value;
-  var minCustomers = event.target.minCustomers.value;
-  var maxCustomers = event.target.maxCustomers.value;
+  var avgCookies = parseFloat(event.target.avgCookies.value);
+  var minCustomers = parseInt(event.target.minCustomers.value);
+  var maxCustomers = parseInt(event.target.maxCustomers.value);
   var name = event.target.name.value;
-  var newStore = new SalmonStore(name, minCustomers, maxCustomers, avgCookies);
+  new SalmonStore(name, minCustomers, maxCustomers, avgCookies);
   event.target.reset();
-  newStore.putTheNumbersInTheBroswer();
+  renderTable();
 }
+
+function footerRow() {
+  var trEl = document.createElement('tr');
+  var total = document.createElement('td');
+  total.textContent = 'Total';
+  trEl.appendChild(total);
+  var totalOfTotals = 0;
+  for (var i = 0; i < timeHours.length; i++) {
+    var totalPerHour = document.createElement('td');
+    var startingCookies = 0;
+    for (var j = 0; j < allBranches.length; j++) {
+      startingCookies = allBranches[j].totalCookiesSoldToday[i] + startingCookies;
+      totalOfTotals += allBranches[j].totalCookiesSoldToday[i];
+    }
+    totalPerHour.textContent = startingCookies;
+    trEl.appendChild(totalPerHour);
+  }
+  var totalElement = document.createElement('td');
+  totalElement.textContent = totalOfTotals;
+  trEl.appendChild(totalElement);
+  tableContent.appendChild(trEl);
+}
+
 function headerRow () {
   var total = document.createElement('th');
   var blankData = document.createElement('th');
-  var tableContent = document.getElementById('storeTable');
   var trEL = document.createElement('tr');
   trEL.appendChild(blankData);
   for (var i = 0; i < timeHours.length; i++) {
@@ -81,7 +105,15 @@ new SalmonStore('SeattleCenter', 11, 38, 3.7);
 new SalmonStore('Capital Hill', 20, 38, 2.3);
 new SalmonStore('Alki', 2, 16, 4.6);
 
-headerRow();
-for (var i = 0; i < allBranches.length; i++) {
-  allBranches[i].putTheNumbersInTheBroswer();
+function renderTable() {
+  tableContent.innerHTML= '';
+  headerRow();
+  for (var i = 0; i < allBranches.length; i++) {
+    allBranches[i].putTheNumbersInTheBroswer();
+  }
+  footerRow();
 }
+renderTable();
+
+
+
