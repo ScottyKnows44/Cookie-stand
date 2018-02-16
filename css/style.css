@@ -1,6 +1,13 @@
+/* this is for the sales.html */
+
 body {
   font-family: 'Baloo', cursive;
-  background: gray;
+  background-image: url(../img/fish4.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size:100%;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.6) 100%), url(../img/fish4.jpg);
 }
 
 fieldset {
@@ -46,7 +53,69 @@ li {
   display: inline;
 }
 
-#storeTable {
-  border: 5px;
-  border-color: green;
+/* Below this is for the index.html page */
+
+
+p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+#headerfish {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  text-transform: capitalize;
+  color: black;
+}
+
+h2 {
+  font-weight: bolder;
+}
+
+#Slogan {
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  font-size: 15px;
+}
+
+section {
+  margin: 15px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#sellout {
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+}
+
+#sellout img {
+  width: 400px;
+  height: 300px;
+  margin: -175px -175px -175px -175px;
+}
+
+#disclaimer {
+  font-size:10px;
+}
+
+#Location {
+  display: inline;
+  margin: 30px;
+  font-weight: bold;
+  padding: 20px;
+  border: 2px;
+
 }
