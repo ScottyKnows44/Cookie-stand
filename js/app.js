@@ -7,7 +7,7 @@ var storeForm = document.getElementById('storeForm');
 var allBranches = [];
 var tableContent = document.getElementById('storeTable');
 
-// Event listener form
+// Event listener form, on submit/event. retreves form data and uses constructor function.
 
 storeForm.addEventListener('submit', handleFormSubmit);
 
@@ -36,7 +36,7 @@ SalmonStore.prototype.peopleEveryHour = function() {
   }
 },
 
-// function for total sold for whole day
+// function for total cookies sold for whole day
 
 SalmonStore.prototype.totalSold = function() {
   for (var i=0; i < timeHours.length; i++) {
@@ -64,7 +64,7 @@ SalmonStore.prototype.putTheNumbersInTheBroswer = function() {
   trEL.appendChild(tdEL);
 };
 
-// event form for a new branch
+// event form for adding/ updating new branch
 
 function handleFormSubmit(event){
   event.preventDefault();
@@ -101,7 +101,7 @@ function footerRow() {
   tableContent.appendChild(trEl);
 }
 
-// header row, includes time of day when open, blank cell, and header for total
+// header row, includes time of day when open, blank cell, and header for total coloumn
 
 function headerRow () {
   var total = document.createElement('th');
